@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon100" width=600 height=600>
+/*<applet code="Dashing Ball" width=600 height=600>
  </applet>*/
-public class vyon101 extends Applet implements KeyListener
+public class Dashing Ball extends Applet implements KeyListener
 { int k,l=0,l1,l2,z=0,s=0;
   int x[]=new int[6];
   int y[]=new int[6];
