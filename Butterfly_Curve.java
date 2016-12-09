@@ -2,7 +2,7 @@
 import java.awt.*;
 import java.applet.*;
 import java.awt.geom.Line2D;
-public class vyon117 extends Applet
+public class Butterfly_Curve extends Applet
 { double x0[]=new double[1000];
   double y0[]=new double[1000];
   double x1[]=new double[1000];
