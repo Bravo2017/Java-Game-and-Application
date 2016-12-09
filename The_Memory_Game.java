@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon163" width=370 height=370>
+/*<applet code="The_Memory_Game" width=370 height=370>
 </applet>*/
-public class vyon163 extends Applet implements MouseListener
+public class The_Memory_Game extends Applet implements MouseListener
 {       int x,y,i,j,x1,y1,c=0,i1,j1,i2,j2,a1,b1,e=0;
         int a[][]=new int[6][6];
         int xp1[]={50,45,45,50};
