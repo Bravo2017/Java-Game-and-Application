@@ -2,7 +2,7 @@
 import java.awt.*;
 import java.applet.*;
 import java.util.Random;
-public class vyon114 extends Applet
+public class Bouncing_Balls extends Applet
 { int c1,c2,i,rand1,rand2,rand3;
   int x[]=new int[200];
   int y[]=new int[200];
