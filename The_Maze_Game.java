@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon164" width=470 height=470>
+/*<applet code="The_Maze_Game" width=470 height=470>
 </applet>*/
-public class vyon164 extends Applet implements KeyListener
+public class The_Maze_Game extends Applet implements KeyListener
 {       int a[][]=new int[20][20];
         int x1,y1,x2,y2,i,j,p1=9,q1=0,e1,e2,t,f=0;
         public void init()
