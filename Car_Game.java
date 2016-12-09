@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon94" width=400 height=350>
+/*<applet code="Car_Game" width=400 height=350>
 </applet>*/
-public class vyon94 extends Applet implements KeyListener,MouseListener
+public class Car_Game extends Applet implements KeyListener,MouseListener
 {       int x=225,y=250,x1,y1,u=180,v=100,p=225,q=150,a=0,z=0,b,k,e=180,f=250,i=225,h=295,flag=0;
         int m1[]=new int[4];
         int m2[]=new int[4];
