@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.util.*;
-/*<applet code="vyon86" width=200 height=200>
+/*<applet code="Digital_Clock" width=200 height=200>
 </applet>*/
-public class vyon86 extends Applet
+public class Digital_Clock extends Applet
 {   
     public void paint(Graphics g)
     { try
