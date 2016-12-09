@@ -2,10 +2,10 @@
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
-/*<applet code="vyon98" width=1000 height=1000>
+/*<applet code="Quiz" width=1000 height=1000>
  </applet>
  */
-public class vyon98 extends Applet implements ActionListener,ItemListener
+public class Quiz extends Applet implements ActionListener,ItemListener
 {   String msg="",s1="",ans="";
     int c=0,q1,q2,q3,q4,q5,t=0;
     Label l1,l2,l3,l4,l5;
