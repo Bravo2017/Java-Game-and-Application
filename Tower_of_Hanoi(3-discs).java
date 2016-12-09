@@ -2,9 +2,9 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
-/*<applet code="vyon165" width=600 height=500>
+/*<applet code="Tower_of_Hanoi(3-discs)" width=600 height=500>
 </applet>*/
-public class vyon165 extends Applet implements MouseListener
+public class Tower_of_Hanoi(3-discs) extends Applet implements MouseListener
 {       int x,y,i,j,x1,y1,w1,x2,w2,e=0,a1=0,b1=0,c1=0,f=0,m=0;
         int a[]=new int[3];
         int b[]=new int[3];
