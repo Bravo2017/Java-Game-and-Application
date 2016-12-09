@@ -3,7 +3,7 @@ import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
 import java.util.Random;
-public class vyon115 extends Applet implements MouseListener,MouseMotionListener
+public class Shoot_the_Box extends Applet implements MouseListener,MouseMotionListener
 { int x,y,w,z,a,b,c,c1,x1,y1,e,f,s;
   double m,m1,i,j,i1,j1,a1,e1;
   public void init()
