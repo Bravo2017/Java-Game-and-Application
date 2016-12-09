@@ -3,9 +3,9 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-/*<applet code="vyon97" width=400 height=400>
+/*<applet code="Flappy_Bird_Game" width=400 height=400>
 </applet>*/
-public class vyon97 extends Applet implements KeyListener
+public class Flappy_Bird_Game extends Applet implements KeyListener
 { int k,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,s,c,f;
   public void init()
   { addKeyListener(this);
