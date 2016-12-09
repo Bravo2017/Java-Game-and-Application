@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon92" width=200 height=350>
+/*<applet code="Rapid_Roll_Game" width=200 height=350>
 </applet>*/
-public class vyon92 extends Applet implements KeyListener
+public class Rapid_Roll_Game extends Applet implements KeyListener
 {       int k,a=0,f=0,z=0,s=0,x=100,y=200,x1=90,y1=200,x2=130,y2=250,x3=50,y3=300,x4=110,y4=350,x5=70,y5=400,x6=30,y6=450,x7=150,y7=500;
         public void init()
         { addKeyListener(this);
