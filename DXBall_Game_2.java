@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon106" width=325 height=460>
+/*<applet code="DXBall_Game_2" width=325 height=460>
 </applet>*/
-public class vyon106 extends Applet implements KeyListener
+public class DXBall_Game_2 extends Applet implements KeyListener
 {       int e=0,e1=0,z=0,sp=20,s=0,f=0,f1=0,f2=0,f3=0,q=0,x,y,x1,y1,x2,y2,x3,y3,k,a1=0,b1=0,a2=0,b2=0,a3=0,b3=0,a=2,b=0,c=0,d=0,a4=2,b4=0,c4=0,d4=0,a5=2,b5=0,c5=0,d5=0;
         public void init()
         { addKeyListener(this);
