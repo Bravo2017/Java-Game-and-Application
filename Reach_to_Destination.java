@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon168" width=358 height=380>
+/*<applet code="Reach_to_Destination" width=358 height=380>
 </applet>*/
-public class vyon168 extends Applet implements KeyListener
+public class Reach_to_Destination extends Applet implements KeyListener
 {       int x=180,y=360,f=0;
         int a[]=new int[9];
         int b[]=new int[9];
