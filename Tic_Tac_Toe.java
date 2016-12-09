@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="Tic Tac Toe" width=440 height=400>
+/*<applet code="Tic_Tac_Toe" width=440 height=400>
 </applet>*/
-public class Tic Tac Toe extends Applet implements MouseListener
+public class Tic_Tac_Toe extends Applet implements MouseListener
 {        int x1,y1,i,j,r,c,v=-1,p,q,e,z,n,m,f,w,b,g1=0;
          char s[][]=new char[3][3];
          int x2=127,y2=132;
