@@ -3,9 +3,9 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-/*<applet code="vyon90" width=800 height=600>
+/*<applet code="Paint" width=800 height=600>
 </applet>*/
-public class vyon90 extends Applet implements MouseListener,MouseMotionListener,ItemListener,ActionListener
+public class Paint extends Applet implements MouseListener,MouseMotionListener,ItemListener,ActionListener
 {       int i,line,k,k1,k2,k3,q,a,b,ac,bc,cc,x1,y1;
         int w[]=new int[1000];
         int x[]=new int[1000];
