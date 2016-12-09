@@ -4,7 +4,7 @@ import java.applet.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.util.*;
-public class vyon116 extends Applet
+public class Analog_Clock extends Applet
 { double x,y,i,x1,y1,x3,y3,x4,y4,x5,y5,i1,i2;
   int c,x2,y2,j;
   public void init()
