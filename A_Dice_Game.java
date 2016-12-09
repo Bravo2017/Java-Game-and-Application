@@ -1,11 +1,11 @@
 //A Dice Game
-import java .applet.*;
+import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-/*<applet code="vyon99" width=500 height=500>
+/*<applet code="A_Dice_Game" width=500 height=500>
  </applet>*/
-public class vyon99 extends Applet implements MouseListener
+public class A_Dice_Game extends Applet implements MouseListener
 {   int x,y,i=1,f=0,c=0,a,s,r=2;
     String msg;
     public void init()
