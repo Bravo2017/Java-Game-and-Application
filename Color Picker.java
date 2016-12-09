@@ -2,10 +2,10 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="vyon102" width=500 height=450>
+/*<applet code="Color Picker" width=500 height=450>
  </applet>
  */
-public class vyon102 extends Applet implements MouseListener
+public class Color Picker extends Applet implements MouseListener
 { int i,j,k,z=0,y=0,x=0,a,x1,y1,r1,g1,b1,r2,g2,b2,x2,y2,h;
   TextField red,green,blue;
   public void init()
