@@ -3,9 +3,9 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-/*<applet code="vyon108" width=320 height=320>
+/*<applet code="Dodging_Disc" width=320 height=320>
 </applet>*/
-public class vyon108 extends Applet implements KeyListener,MouseListener
+public class Dodging_Disc extends Applet implements KeyListener,MouseListener
 {       int x,y,x2,y2,x3=100,y3=100,x4=380,y4=100,i,j,c=0,d=0,s=0,s1=0,r1=1,k,k1=0,f=0;
         public void init()
         { addKeyListener(this);
