@@ -3,9 +3,9 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-/*<applet code="vyon113" width=500 height=500>
+/*<applet code="Battle_City" width=500 height=500>
 </applet>*/
-public class vyon113 extends Applet implements KeyListener
+public class Battle_City extends Applet implements KeyListener
 { int k,x,y,x1,y1,x2,y2,x3,y3,x4,y4,a,b,a1,b1,a2,b2,a3,b3,a4,b4,i,i1,i2,i3,i4,j,kc,kc1,kc2,kc3,f1,f2,f3,f4,f5,rand,rand1,rand2,rand3;
   int xb[]=new int[1000];
   int yb[]=new int[1000];
