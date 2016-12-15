@@ -2,9 +2,9 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<APPLET Code="vyon119" Width=500 Height=400>
+/*<APPLET Code="Calender" Width=500 Height=400>
 </APPLET>*/
-public class vyon119 extends Applet implements ItemListener
+public class Calender extends Applet implements ItemListener
 { int m,y,i,j,k,l,y1,p,q,r,f,s,d,x2,y2;
   String mon,yr;
   List month,year;
