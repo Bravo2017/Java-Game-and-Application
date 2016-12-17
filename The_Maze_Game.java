@@ -2,11 +2,13 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 /*<applet code="The_Maze_Game" width=470 height=470>
 </applet>*/
-public class The_Maze_Game extends Applet implements KeyListener
+public class The_Maze_Game extends JApplet implements KeyListener
 {       int a[][]=new int[20][20];
         int x1,y1,x2,y2,i,j,p1=9,q1=0,e1,e2,t,f=0;
+        private JPanel panel;
         public void init()
         { addKeyListener(this);
           requestFocus();
@@ -30,6 +32,44 @@ public class The_Maze_Game extends Applet implements KeyListener
             }
           }
           a[9][0]=0;
+          panel = new JPanel()
+          { protected void paintComponent(Graphics g)
+            { super.paintComponent(g);
+              Color cobj=new Color(153,253,170);
+              Font fobj=new Font("Arial",Font.BOLD,24);
+              if(f==0)
+              { x1 = 40;
+                y1=40;
+                for(i=0;i<20;i++)
+                { for(j=0;j<20;j++)
+                  { if(a[i][j]==0)
+                    { g.setColor(cobj);
+                      g.fillRect(x1, y1, 20, 20);
+                    }
+                    else if(a[i][j]==1)
+                    { g.setColor(Color.WHITE);
+                      g.fillRect(x1, y1, 20, 20);
+                    }
+                    else if(a[i][j]==2)
+                    { g.setColor(Color.GRAY);
+                      g.fillRect(x1, y1, 20, 20);
+                    }
+                    x1=x1+20;
+                  }
+                  y1=y1+20;
+                  x1=40;
+                }
+              }
+              if(a[7][19]==0)
+              { f=1;
+                g.setFont(fobj);
+                g.setColor(Color.MAGENTA);
+                g.drawString("YOU WIN",200,250);
+                repaint();
+              }
+            }
+          };
+          add(panel);
         }
         public void keyPressed(KeyEvent ke)
         { int k=ke.getKeyCode();
@@ -88,39 +128,7 @@ public class The_Maze_Game extends Applet implements KeyListener
         public void keyTyped(KeyEvent ke)
         {}
         public void paint(Graphics g)
-        { //showStatus();
-            Color cobj=new Color(153,253,170);
-            Font fobj=new Font("Arial",Font.BOLD,24);
-            if(f==0)
-            { x1 = 40;
-              y1=40;
-              for(i=0;i<20;i++)
-              { for(j=0;j<20;j++)
-                { if(a[i][j]==0)
-                  { g.setColor(cobj);
-                    g.fillRect(x1, y1, 20, 20);
-                  }
-                  else if(a[i][j]==1)
-                  { g.setColor(Color.WHITE);
-                    g.fillRect(x1, y1, 20, 20);
-                  }
-                  else if(a[i][j]==2)
-                  { g.setColor(Color.GRAY);
-                    g.fillRect(x1, y1, 20, 20);
-                  }
-                  x1=x1+20;
-                }
-                y1=y1+20;
-                x1=40;
-              }
-            }
-            if(a[7][19]==0)
-            { f=1;
-              g.setFont(fobj);
-              g.setColor(Color.MAGENTA);
-              g.drawString("YOU WIN",250,250);
-              repaint();
-            }
-            setSize(470,470);
+        { super.paint(g);
+          setSize(470,470);
         }
 }
