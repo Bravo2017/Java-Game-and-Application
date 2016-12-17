@@ -2,36 +2,23 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 /*<applet code="Brick_Break_Game" width=410 height=360>
 </applet>*/
-public class Brick_Break_Game extends Applet implements KeyListener
+public class Brick_Break_Game extends JApplet implements KeyListener
 {       int x=300,y=482,k,x1=315,y1=470,a,b,c,d,a1,b1,e=0,f=-1,z=0;
         int br[]={1,1,1,1,1,1,1,1,1,1,1,1};
         int bw[]={50,50,50,50,50,50,50,50,50,50,50,50};
         int bh[]={15,15,15,15,15,15,15,15,15,15,15,15};
+        private JPanel panel;
         public void init()
         { addKeyListener(this);
           requestFocus();
-        }
-        public void keyPressed(KeyEvent ke)
-        { k=ke.getKeyCode();
-          if(z==0)
-          { if (k==32)
-            { f=0;
-              z=1;
-            }
-          }
-          repaint();
-        }
-        public void keyReleased(KeyEvent ke)
-        {}
-        public void keyTyped(KeyEvent ke)
-        {}
-        public void paint(Graphics g)
-        { try
-          { 
-            setSize(600,500);
-            Font fobj = new Font("Arial", Font.BOLD, 40);
+          panel = new JPanel()
+          { protected void paintComponent(Graphics g)
+            { super.paintComponent(g);
+              try
+             { Font fobj = new Font("Arial", Font.BOLD, 40);
             g.setFont(fobj);
             if(f==1)
             { setBackground(Color.WHITE);
@@ -334,6 +321,27 @@ public class Brick_Break_Game extends Applet implements KeyListener
           }
           catch(Exception e)
           {}
+            }
+          };
+          add(panel);
+        }
+        public void keyPressed(KeyEvent ke)
+        { k=ke.getKeyCode();
+          if(z==0)
+          { if (k==32)
+            { f=0;
+              z=1;
+            }
+          }
+          repaint();
+        }
+        public void keyReleased(KeyEvent ke)
+        {}
+        public void keyTyped(KeyEvent ke)
+        {}
+        public void paint(Graphics g)
+        { super.paint(g);
+          setSize(600,500);
         }
 }
 
