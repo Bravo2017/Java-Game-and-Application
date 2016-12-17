@@ -2,53 +2,21 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 /*<applet code="DXBall_Game" width=410 height=350>
 </applet>*/
-public class DXBall_Game extends Applet implements KeyListener
+public class DXBall_Game extends JApplet implements KeyListener
 {       int x=238,y=333,k,a1=0,b1=0,a=2,b=0,c=0,d=0,x1=203,y1=333,e=0,z=0,s,f=0;
+        private JPanel panel;
         public void init()
         { addKeyListener(this);
           requestFocus();
           y=326;
-        }
-        public void keyPressed(KeyEvent ke)
-        { k=ke.getKeyCode();
-          if(k==38)
-          { if(z==0)
-            { a=0;
-              z++;
-              y=333;
-            }
-          }
-          if(k==37)
-          { if(z==0)
-            { a=0;
-              z++;
-              e=-5;
-              y=333;
-            }
-            else
-            e=-5;
-          }
-          if(k==39)
-          { if(z==0)
-            { a=0;
-              z++;
-              e=-5;
-              y=333;
-            }
-            else
-            e=5;
-          }
-          repaint();
-        }
-        public void keyReleased(KeyEvent ke)
-        {}
-        public void keyTyped(KeyEvent ke)
-        {}
-        public void paint(Graphics g)
-        { try
-          { showStatus("         SCORE = "+s);
+          panel = new JPanel()
+          { protected void paintComponent(Graphics g)
+            { super.paintComponent(g);
+              try
+             { showStatus("         SCORE = "+s);
             Color cobj=new Color(10,131,231);
             Font fobj=new Font("Arial",Font.BOLD,20);
             Font fobj1=new Font("Arial",Font.BOLD,25);
@@ -191,10 +159,50 @@ public class DXBall_Game extends Applet implements KeyListener
               }
               repaint();
             }
-            setSize(410,350);
           }
           catch(Exception e)
           {}
+            }
+          };
+          add(panel);
+        }
+        public void keyPressed(KeyEvent ke)
+        { k=ke.getKeyCode();
+          if(k==38)
+          { if(z==0)
+            { a=0;
+              z++;
+              y=333;
+            }
+          }
+          if(k==37)
+          { if(z==0)
+            { a=0;
+              z++;
+              e=-5;
+              y=333;
+            }
+            else
+            e=-5;
+          }
+          if(k==39)
+          { if(z==0)
+            { a=0;
+              z++;
+              e=-5;
+              y=333;
+            }
+            else
+            e=5;
+          }
+          repaint();
+        }
+        public void keyReleased(KeyEvent ke)
+        {}
+        public void keyTyped(KeyEvent ke)
+        {}
+        public void paint(Graphics g)
+        { setSize(410,350);
+          super.paint(g);
         }
 }
-
