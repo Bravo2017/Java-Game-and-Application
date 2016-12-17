@@ -3,18 +3,20 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
+import javax.swing.*;
 /*<applet code="Sudoku" width=400 height=400>
 </applet>*/
-public class Sudoku extends Applet implements KeyListener
+public class Sudoku extends JApplet implements KeyListener
 {       int m[]=new int[9];
         int a[][]=new int[9][9];
         int b[][]=new int[9][9];
         int b1[][]=new int[9][9];
         int x1,y1,x2,y2,x3=20,y3=20,x4,y4,i,j,c=0,d=0,h,v=0,z=0;
+        int r1,p1,q1;
         char ch;
+        private JPanel panel;
         public void init()
-        { int r1,i,j,p1,q1;
-          addKeyListener(this);
+        { addKeyListener(this);
           requestFocus();
           int k=0;
 	  while(k<9)
@@ -55,6 +57,140 @@ public class Sudoku extends Applet implements KeyListener
           { for(j=0;j<9;j++)
             b1[i][j]=a[i][j];
           }
+          panel = new JPanel()
+          { protected void paintComponent(Graphics g)
+            { super.paintComponent(g);
+              Color cobj=new Color(192,192,192);
+              Color cobj1=new Color(117,199,82);
+              Color cobj2=new Color(27,103,29);
+              Font fobj=new Font("Arial",Font.BOLD,18);
+              if(v==1)
+              { setBackground(Color.white);
+                g.setColor(Color.YELLOW);
+                g.fillOval(60,40,200,200);
+                g.setColor(Color.BLACK);
+                g.fillOval(95,105,30,30);
+                g.fillOval(175,105,30,30);
+                g.fillOval(90,150,120,60);
+                g.setColor(Color.YELLOW);
+                g.fillRect(90,150,120,30);
+                g.fillOval(90,160,120,40);
+                g.setFont(fobj);
+                g.setColor(Color.BLACK);
+                g.drawString("YOU WIN",280,120);
+              }
+              else
+              { if(ch=='1')
+                h=1;
+                else if(ch=='2')
+                h=2;
+                else if(ch=='3')
+                h=3;
+                else if(ch=='4')
+                h=4;
+                else if(ch=='5')
+                h=5;
+                else if(ch=='6')
+                h=6;
+                else if(ch=='7')
+                h=7;
+                else if(ch=='8')
+                h=8;
+                else if(ch=='9')
+                h=9;
+                else if(ch=='0')
+                h=0;
+                for(i=0;i<9;i++)
+                { for(j=0;j<9;j++)
+                  { if(x3==x4&&y3==y4&&b1[i][j]==0)
+                    { a[i][j]=h;
+                      break;
+                    }
+                    else
+                    x4=x4+40;
+                  }
+                  x4=20;
+                  y4=y4+40;
+                }
+                x3=x3+c;
+                y3=y3+d;
+                if(x3<20)
+                x3=20;
+                if(y3<20)
+                y3=20;
+                if(x3>340)
+                x3=340;
+                if(y3>340)
+                y3=340;
+                g.setColor(cobj1);
+                g.fillRect(0,0,400,400);
+                g.setColor(Color.WHITE);
+                g.setFont(fobj);
+                g.drawString("SUDOKU",170,15);
+                x1=40;
+                y1=40;
+                for(i=0;i<9;i++)
+                { for(j=0;j<9;j++)
+                  { if(b1[i][j]==0)
+                    { g.setColor(cobj);
+                      g.fillRect(x1-20,y1-20,40,40);
+                    }
+                    x1=x1+40;
+                  }
+                  y1=y1+40;
+                  x1=40;
+                }
+                g.setColor(cobj2);
+                g.fillRect(x3,y3,40,40);
+                x1=40;
+                y1=40;
+                for(i=0;i<9;i++)
+                { for(j=0;j<9;j++)
+                  { if(a[i][j]==0)
+                    { g.drawString("",x1,y1);
+                    }
+                    else
+                    { g.setColor(Color.WHITE);
+                      g.setFont(fobj);
+                      g.drawString(""+a[i][j],x1,y1);
+                    }
+                    x1=x1+40;
+                  }
+                  y1=y1+40;
+                  x1=40;
+                }
+                g.setColor(Color.WHITE);
+                y1=20;
+                y2=y1;
+                for(i=1;i<11;i++)
+                { g.drawLine(20,y1,380,y2);
+                  y1=y1+40;
+                  y2=y1;
+                }
+                x1=20;
+                x2=20;
+                for(i=1;i<11;i++)
+                { g.drawLine(x1,20,x2,380);
+                  x1=x1+40;
+                  x2=x1;
+                }
+                z=0;
+                for(i=0;i<9;i++)
+                { for(j=0;j<9;j++)
+                  { if(a[i][j]==b[i][j])
+                    z++;
+                    else
+                    z=0;
+                  }
+                }
+                if(z==81)
+                { v=1;
+                  repaint();
+                }
+              }
+            }
+          };
+          add(panel);
         }
         public void keyPressed(KeyEvent ke)
         { int k=ke.getKeyCode();
@@ -95,137 +231,7 @@ public class Sudoku extends Applet implements KeyListener
           repaint();
         }
         public void paint(Graphics g)
-        { Color cobj=new Color(192,192,192);
-          Color cobj1=new Color(117,199,82);
-          Color cobj2=new Color(27,103,29);
-          Font fobj=new Font("Arial",Font.BOLD,18);
-          //showStatus("           h="+h+"       z= "+z+"  v= "+v);
-          if(v==1)
-          { setBackground(Color.white);
-            g.setColor(Color.YELLOW);
-            g.fillOval(60,40,200,200);
-            g.setColor(Color.BLACK);
-            g.fillOval(95,105,30,30);
-            g.fillOval(175,105,30,30);
-            g.fillOval(90,150,120,60);
-            g.setColor(Color.YELLOW);
-            g.fillRect(90,150,120,30);
-            g.fillOval(90,160,120,40);
-            g.setFont(fobj);
-            g.setColor(Color.BLACK);
-            g.drawString("YOU WIN",280,120);
-          }  
-          else
-          { if(ch=='1')
-            h=1;
-            else if(ch=='2')
-            h=2;
-            else if(ch=='3')
-            h=3;
-            else if(ch=='3')
-            h=3;
-            else if(ch=='4')
-            h=4;
-            else if(ch=='5')
-            h=5;
-            else if(ch=='6')
-            h=6;
-            else if(ch=='7')
-            h=7;
-            else if(ch=='8')
-            h=8;
-            else if(ch=='9')
-            h=9;
-            else if(ch=='0')
-            h=0;
-            for(i=0;i<9;i++)
-            { for(j=0;j<9;j++)
-              { if(x3==x4&&y3==y4&&b1[i][j]==0)
-                { a[i][j]=h;
-                  break;
-                }
-                else
-                x4=x4+40;
-              }
-              x4=20;
-              y4=y4+40;
-            }
-            x3=x3+c;
-            y3=y3+d;
-            if(x3<20)
-            x3=20;
-            if(y3<20)
-            y3=20;
-            if(x3>340)
-            x3=340;
-            if(y3>340)
-            y3=340;
-            g.setColor(cobj1);
-            g.fillRect(0,0,400,400);
-            g.setColor(Color.WHITE);
-            g.setFont(fobj);
-            g.drawString("SUDOKU",170,15);
-            x1=40;
-            y1=40;
-            for(i=0;i<9;i++)
-            { for(j=0;j<9;j++)
-              { if(b1[i][j]==0)
-                { g.setColor(cobj);
-                  g.fillRect(x1-20,y1-20,40,40);
-                }
-                x1=x1+40;
-              }
-              y1=y1+40;
-              x1=40;
-            }
-            g.setColor(cobj2);
-            g.fillRect(x3,y3,40,40);
-            x1=40;
-            y1=40;
-            for(i=0;i<9;i++)
-            { for(j=0;j<9;j++)
-              { if(a[i][j]==0)
-                { g.drawString("",x1,y1);
-                }
-                else
-                { g.setColor(Color.WHITE);
-                  g.setFont(fobj);
-                  g.drawString(""+a[i][j],x1,y1);
-                }
-                x1=x1+40;
-              }
-              y1=y1+40;
-              x1=40;
-            }
-            g.setColor(Color.WHITE);
-            y1=20;
-            y2=y1;
-            for(i=1;i<11;i++)
-            { g.drawLine(20,y1,380,y2);
-              y1=y1+40;
-              y2=y1;
-            }
-            x1=20;
-            x2=20;
-            for(i=1;i<11;i++)
-            { g.drawLine(x1,20,x2,380);
-              x1=x1+40;
-              x2=x1;
-            }
-            z=0;
-            for(i=0;i<9;i++)
-            { for(j=0;j<9;j++)
-              { if(a[i][j]==b[i][j])
-                z++;
-                else
-                z=0;
-              }
-            }
-            if(z==81)
-            { v=1;
-              repaint();
-            }
-          }
+        { super.paint(g);
           setSize(400,400);
         }
 }
