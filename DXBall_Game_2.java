@@ -2,10 +2,12 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 /*<applet code="DXBall_Game_2" width=325 height=460>
 </applet>*/
-public class DXBall_Game_2 extends Applet implements KeyListener
+public class DXBall_Game_2 extends JApplet implements KeyListener
 {       int e=0,e1=0,z=0,sp=20,s=0,f=0,f1=0,f2=0,f3=0,q=0,x,y,x1,y1,x2,y2,x3,y3,k,a1=0,b1=0,a2=0,b2=0,a3=0,b3=0,a=2,b=0,c=0,d=0,a4=2,b4=0,c4=0,d4=0,a5=2,b5=0,c5=0,d5=0;
+        private JPanel panel;
         public void init()
         { addKeyListener(this);
           requestFocus();
@@ -17,36 +19,16 @@ public class DXBall_Game_2 extends Applet implements KeyListener
           y2=10;
           x3=203;
           y3=448;
-        }                  
-        public void keyPressed(KeyEvent ke)
-        { k=ke.getKeyCode();
-          if(k==38&&z==0)
-          { a=1;
-            b=1;
-            q=0;
-            s=0;
-            a1=-5;
-            b1=-5;
-            z++;
-          }
-          if(k==37&&z>0&&e1==0)
-          e=-5;
-          if(k==39&&z>0&&e1==0)
-          e=5;
-          repaint();
-        }
-        public void keyReleased(KeyEvent ke)
-        {}
-        public void keyTyped(KeyEvent ke)
-        {}
-        public void paint(Graphics g)
-        { try
+          panel = new JPanel()
+          { protected void paintComponent(Graphics g)
+            { super.paintComponent(g);
+              try
           { showStatus("         SCORE= "+s);
             Font fobj=new Font("Arial",Font.BOLD,25);
             Font fobj1=new Font("Arial",Font.BOLD,80);
             if(e1==1)
             { g.setColor(Color.ORANGE);
-              g.setFont(fobj); 
+              g.setFont(fobj);
               g.drawString("GAME OVER",100,200);
             }
             else if(e1==0)
@@ -68,7 +50,7 @@ public class DXBall_Game_2 extends Applet implements KeyListener
               g.fillRoundRect(x3,y3,80,5,5,5);
               if(z==0)
               { g.setColor(Color.GRAY);
-                g.setFont(fobj1); 
+                g.setFont(fobj1);
                 g.drawString("2",150,120);
                 g.setFont(fobj);
                 g.setColor(Color.PINK);
@@ -144,7 +126,7 @@ public class DXBall_Game_2 extends Applet implements KeyListener
                 { a1=-5;
                   b1=-5;
                   d=0;
-                }  
+                }
                 else if(a==0&&b==0&&c==0&&d==0)
                 { a1=-5;
                   b1=5;
@@ -181,7 +163,7 @@ public class DXBall_Game_2 extends Applet implements KeyListener
                 { a1=5;
                   b1=-5;
                   d=1;
-                } 
+                }
                 else if(a==1&&b==0&&c==1&&d==0)
                 { a1=-5;
                   b1=5;
@@ -503,10 +485,38 @@ public class DXBall_Game_2 extends Applet implements KeyListener
               else if(f==3)
               e1=1;
             }
-            repaint();setSize(325,460);}
+            repaint();}
           }
           catch(Exception e)
           {}
+            }
+          };
+          add(panel);
+        }                  
+        public void keyPressed(KeyEvent ke)
+        { k=ke.getKeyCode();
+          if(k==38&&z==0)
+          { a=1;
+            b=1;
+            q=0;
+            s=0;
+            a1=-5;
+            b1=-5;
+            z++;
+          }
+          if(k==37&&z>0&&e1==0)
+          e=-5;
+          if(k==39&&z>0&&e1==0)
+          e=5;
+          repaint();
+        }
+        public void keyReleased(KeyEvent ke)
+        {}
+        public void keyTyped(KeyEvent ke)
+        {}
+        public void paint(Graphics g)
+        { super.paint(g);
+          setSize(325,460);
         }
 }
 
