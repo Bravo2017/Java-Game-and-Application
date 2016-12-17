@@ -3,9 +3,10 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
+import javax.swing.*;
 /*<applet code="Battle_City" width=500 height=500>
 </applet>*/
-public class Battle_City extends Applet implements KeyListener
+public class Battle_City extends JApplet implements KeyListener
 { int k,x,y,x1,y1,x2,y2,x3,y3,x4,y4,a,b,a1,b1,a2,b2,a3,b3,a4,b4,i,i1,i2,i3,i4,j,kc,kc1,kc2,kc3,f1,f2,f3,f4,f5,rand,rand1,rand2,rand3;
   int xb[]=new int[1000];
   int yb[]=new int[1000];
@@ -22,6 +23,7 @@ public class Battle_City extends Applet implements KeyListener
   int xb4[]=new int[1000];
   int yb4[]=new int[1000];
   int ab4[]=new int[1000];
+  private JPanel panel;
   public void init()
   { addKeyListener(this);
     requestFocus();
@@ -49,53 +51,11 @@ public class Battle_City extends Applet implements KeyListener
     rand2=150;
     kc3=150;
     rand3=150;
-  }
-  public void keyPressed(KeyEvent ke)
-  {}
-  public void keyReleased(KeyEvent ke)
-  { if(f5==0)
-    { k=ke.getKeyCode();
-      if(k==38)
-      a=1;
-      else if(k==40)
-      a=2;
-      else if(k==37)
-      a=3;
-      else if(k==39)
-      a=4;
-      if(k==32)
-      { b=1;
-        i++;
-        if(a==1)
-        { xb[i]=x+18;
-          yb[i]=y-5;
-          ab[i]=a;
-        }
-        else if(a==2)
-        { xb[i]=x+18;
-          yb[i]=y+37;
-          ab[i]=a;
-        }
-        else if(a==3)
-        { xb[i]=x-4;
-          yb[i]=y+18;
-          ab[i]=a;
-        }
-        else if(a==4)
-        { xb[i]=x+37;
-          yb[i]=y+18;
-          ab[i]=a;
-        }
-      }
-      repaint();
-    }
-  }
-  public void keyTyped(KeyEvent ke)
-  {}
-  public void paint(Graphics g)
-  {  try
-     { setSize(500,500);
-       Color cobj1=new Color(149,175,146);
+    panel = new JPanel()
+    { protected void paintComponent(Graphics g)
+      { super.paintComponent(g);
+     try
+     { Color cobj1=new Color(149,175,146);
        Color cobj2=new Color(149,0,0);
        setBackground(cobj1);
        Color cobj=new Color(27,140,60);
@@ -760,5 +720,55 @@ public class Battle_City extends Applet implements KeyListener
      }
      catch(Exception e)
      {}
+      }
+    };
+    add(panel);
+  }
+  public void keyPressed(KeyEvent ke)
+  {}
+  public void keyReleased(KeyEvent ke)
+  { if(f5==0)
+    { k=ke.getKeyCode();
+      if(k==38)
+      a=1;
+      else if(k==40)
+      a=2;
+      else if(k==37)
+      a=3;
+      else if(k==39)
+      a=4;
+      if(k==32)
+      { b=1;
+        i++;
+        if(a==1)
+        { xb[i]=x+18;
+          yb[i]=y-5;
+          ab[i]=a;
+        }
+        else if(a==2)
+        { xb[i]=x+18;
+          yb[i]=y+37;
+          ab[i]=a;
+        }
+        else if(a==3)
+        { xb[i]=x-4;
+          yb[i]=y+18;
+          ab[i]=a;
+        }
+        else if(a==4)
+        { xb[i]=x+37;
+          yb[i]=y+18;
+          ab[i]=a;
+        }
+      }
+      repaint();
+    }
+  }
+  public void keyTyped(KeyEvent ke)
+  {}
+  public void paint(Graphics g)
+  {  setSize(500,500);
+     super.paint(g);
+
   }
 }
