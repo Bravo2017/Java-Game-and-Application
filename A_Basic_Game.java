@@ -7,7 +7,7 @@ import javax.swing.*;
 /*<applet code="A_Basic_Game" width=400 height=400>
 </applet>*/
 public class A_Basic_Game extends JApplet implements KeyListener
-{       int k,x,i,j,z,z1,z2,c,k1,f,l;
+{       int k,x,i,j,z,z1,z2,c,k1,f,l,t++;
         int xb[]=new int[10000];
         int yb[]=new int[10000];
         int xb1[]=new int[10000];
@@ -30,7 +30,14 @@ public class A_Basic_Game extends JApplet implements KeyListener
             { super.paintComponent(g);
               try
               { setBackground(Color.BLACK);
+                if(t<480)
                 z=20;
+                if(t>=480&&t<600)
+                z=50;
+                if(t>=600&&t<800)
+                z=80;
+                if(t>=800)
+                z=110;
                 if(f==0)
                 { g.setColor(Color.RED);
                   g.fillRect(x,400,30,30);
@@ -93,6 +100,7 @@ public class A_Basic_Game extends JApplet implements KeyListener
                   }
                 }
                 c++;
+                t++;
                 Thread.sleep(40);
                 repaint();
               }
