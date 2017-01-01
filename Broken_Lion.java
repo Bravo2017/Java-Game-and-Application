@@ -13,7 +13,10 @@ public class Broken_Lion extends JApplet
             { super.paintComponent(g);
               setBackground(Color.white);
               try
-              { /*Nose*/
+              { Font fobj=new Font("Chiller",Font.BOLD,22);
+                g.setFont(fobj);
+                g.drawString("Made By - SHASHANK SINGHAL",230,450);
+                /*Nose*/
                 Color c1=new Color(138,138,138);
                 g.setColor(c1);
                 int t1x[]={85,86,90};
