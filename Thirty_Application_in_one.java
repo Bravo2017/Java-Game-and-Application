@@ -2,7 +2,7 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-/*<applet code="30_Application_in_one" width=500 height=500>
+/*<applet code="Thirty_Application_in_one" width=500 height=500>
  </applet>*/
 class MyFrame1 extends Frame implements WindowListener,ActionListener
 { double weight,height,BMI;
@@ -2181,7 +2181,7 @@ class MyFrame30 extends Frame implements WindowListener,ActionListener
     setTitle("Area & Volume of Cuboid");
   }
 }
-public class 30_Application_in_one extends Applet implements AdjustmentListener,ItemListener,ActionListener
+public class Thirty_Application_in_one extends Applet implements AdjustmentListener,ItemListener,ActionListener
 { MyFrame1 mf1;
   MyFrame2 mf2;
   MyFrame3 mf3;
