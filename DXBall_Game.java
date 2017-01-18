@@ -189,7 +189,7 @@ public class DXBall_Game extends JApplet implements KeyListener
           { if(z==0)
             { a=0;
               z++;
-              e=-5;
+              e=5;
               y=333;
             }
             else
