@@ -12,7 +12,7 @@ class abc
     {}
   }
 }
-public class test
+public class Open_path_and_directory
 { public static void main(String[] args)
   { abc obj=new abc();
     obj.A();
